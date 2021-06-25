@@ -62,11 +62,13 @@ It should add the word "Strive" in front of the given string, but if the given s
 
 /* WRITE YOUR CODE HERE */
 function stirvify(string){
-    let newString = string === "Strive"? string: "Strive "+ string
-    return newString
+    // let newString = string.slice(0,7) === "Strive"? string: "Strive "+ string
+
+
+    return string.startsWith('Strive') ? string: "Strive" + string
 }
 
-console.log(stirvify("Strive"));
+console.log(stirvify("Strivefy"));
 console.log(stirvify("hello"));
 
 /* EXERCISE 6
