@@ -110,17 +110,16 @@ The function loops and prints a random number between 0 and 9 until the random n
 /* WRITE YOUR CODE HERE */
 
 function loopUntil(x){
-    let randNum = Math.floor(Math.random()*9)
+    let randNum = Math.floor(Math.random()*10)
     let n = 0;
     if(x<9 && x>0){
-        while(n<4){
+        while(n<3){
             randNum = Math.floor(Math.random()*9)
             console.log(randNum);
-            if(randNum > x){
-                n++;
-            } 
+            randNum>x?n++:n=0
         }
     }
+    console.log("Loop Ended");
 }
 loopUntil(6)
 
@@ -190,5 +189,11 @@ Ex.: X = 3, Y = 2
 
 /* WRITE YOUR CODE HERE */
 // function matrixGenerator(x,y){
-    
+
+//  for(let i = 0;i<x;i++){
+//      for(let b = 0;b<y;b++){
+//     console.log(i.toString() + b.toString()); 
+//      }
+//     }   
 // }
+// matrixGenerator(3,2)
