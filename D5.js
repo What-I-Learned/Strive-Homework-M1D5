@@ -121,7 +121,7 @@ Write a function "upperFirst" to capitalize the first letter of each word of a g
 function upperFirst (string){
     let str = string.split(' ')
     let capStrings = []
-    for (const letter of str[0]) {
+    for (const letter of str) {
         capStrings.push(letter[0].toUpperCase() + letter.slice(1));
       }
       console.log(capStrings.join(' '));
