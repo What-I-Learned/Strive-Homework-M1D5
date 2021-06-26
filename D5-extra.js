@@ -5,28 +5,27 @@ The function returns the sum of the numbers bigger than 5.
 */
 
 /* WRITE YOUR CODE HERE */
-function giveMeRandom(n){
-    let randNumArr = [];
-    for(let i=0;i< n;i++){
-        randNumArr.push(Math.floor(Math.random() * 11))
-    }
-    return randNumArr
+function giveMeRandom(n) {
+  let randNumArr = [];
+  for (let i = 0; i < n; i++) {
+    randNumArr.push(Math.floor(Math.random() * 11));
+  }
+  return randNumArr;
 }
 let randArr = giveMeRandom(5);
 console.log(randArr);
 
-
-function checkArray (arr){
-    let sum =0;
-    for(let item of arr){
-        if(item>5){
-            sum+=item;
-            console.log(`Number ${item} is bigger than 5`);     
-        }else{
-            console.log(`Number ${item} is bigger than 5`); 
-        }
+function checkArray(arr) {
+  let sum = 0;
+  for (let item of arr) {
+    if (item > 5) {
+      sum += item;
+      console.log(`Number ${item} is bigger than 5`);
+    } else {
+      console.log(`Number ${item} is bigger than 5`);
     }
-    return sum                   
+  }
+  return sum;
 }
 
 console.log(checkArray(randArr));
@@ -40,16 +39,15 @@ Create a function "shippingCartTotal" which calculates the total due to the shop
 /* WRITE YOUR CODE HERE */
 
 const shoppingCart = [
-    {id:234,price:24,name:"Lolipop",quantity:2,},
-    {id:437,price:52,name:"Chocolate",quantity:7,},
-    {id:635,price:47,name:"Sugar",quantity:5,},
-]
+  { id: 234, price: 24, name: "Lolipop", quantity: 2 },
+  { id: 437, price: 52, name: "Chocolate", quantity: 7 },
+  { id: 635, price: 47, name: "Sugar", quantity: 5 },
+];
 
-
-function shippingCartTotal (objArr){
-    let totalPrice = 0;
-    objArr.forEach(arrItem => totalPrice += arrItem.price)
-    return totalPrice
+function shippingCartTotal(objArr) {
+  let totalPrice = 0;
+  objArr.forEach((arrItem) => (totalPrice += arrItem.price));
+  return totalPrice;
 }
 console.log(shippingCartTotal(shoppingCart));
 
@@ -62,10 +60,10 @@ Create a function "addToShoppingCart" which receives a new object, adds it to sh
 
 /* WRITE YOUR CODE HERE */
 
-function addToShoppingCart (objArr){
-    let totalAmount = 0 ;
-    objArr.forEach(arrItem => totalAmount += arrItem.quantity)
-    return totalAmount
+function addToShoppingCart(objArr) {
+  let totalAmount = 0;
+  objArr.forEach((arrItem) => (totalAmount += arrItem.quantity));
+  return totalAmount;
 }
 console.log(addToShoppingCart(shoppingCart));
 
@@ -74,18 +72,16 @@ In your eCommerce you have an array of objects called shoppingCart. In this arra
 Create a function "maxShoppingCart" which receives the shoppingCart array and returns the most expensive item in the array.
 */
 
-
-
 /* WRITE YOUR CODE HERE */
 console.log("Ex 14");
 
-function maxShoppingCart(objArr){
-    let currPrice = objArr[1];
-    objArr.forEach(function(arrItem) {
-        if(arrItem.price > currPrice)
-            currPrice = arrItem;})
-        
-    return currPrice.name;
+function maxShoppingCart(objArr) {
+  let currPrice = objArr[1];
+  objArr.forEach(function (arrItem) {
+    if (arrItem.price > currPrice) currPrice = arrItem;
+  });
+
+  return currPrice.name;
 }
 console.log(maxShoppingCart(shoppingCart));
 /* EXERCISE 15
@@ -96,9 +92,9 @@ Create a function "latestShoppingCart" which receives the shoppingCart array and
 
 /* WRITE YOUR CODE HERE */
 
-function latestShoppingCart(shoppingCart){
-    let last = shoppingCart[shoppingCart.length -1]
-    return last
+function latestShoppingCart(shoppingCart) {
+  let last = shoppingCart[shoppingCart.length - 1];
+  return last;
 }
 console.log(latestShoppingCart(shoppingCart));
 
@@ -109,44 +105,46 @@ The function loops and prints a random number between 0 and 9 until the random n
 
 /* WRITE YOUR CODE HERE */
 
-function loopUntil(x){
-    let randNum = Math.floor(Math.random()*10)
-    let n = 0;
-    if(x<9 && x>0){
-        while(n<3){
-            randNum = Math.floor(Math.random()*9)
-            console.log(randNum);
-            randNum>x?n++:n=0
-        }
+function loopUntil(x) {
+  let randNum = Math.floor(Math.random() * 10);
+  let n = 0;
+  if (x < 9 && x > 0) {
+    while (n !== 3) {
+      randNum = Math.floor(Math.random() * 9);
+      randNum > x ? n++ : (n = 0);
+      console.log(randNum);
     }
-    console.log("Loop Ended");
+  }
+  console.log("Loop Ended");
 }
-loopUntil(6)
+loopUntil(6);
 
 /* EXERCISE 17
 Write a function "average" which receives an array and return the average value. The function automatically skips non-numeric entries in the array.
 */
 
 /* WRITE YOUR CODE HERE */
-function average(arr){
-    let filterArr = arr.filter(el => typeof(el) === "number")
-    let avr =filterArr.reduce((sum,num)=>sum+num)/filterArr.length
+function average(arr) {
+  let filterArr = arr.filter((el) => typeof el === "number");
+  let avr = filterArr.reduce((sum, num) => sum + num) / filterArr.length;
 
-    return avr
+  return avr;
 }
 
-console.log(average([1,2,5,4,"a","b"]));
+console.log(average([1, 2, 5, 4, "a", "b"]));
 /* EXERCISE 18
 Write a function "longest" to find the longest string from an given array of strings.
 */
 
 /* WRITE YOUR CODE HERE */
 
-function longest(strArr){
-    let longestStr = strArr.reduce((prevW,currW)=> prevW.length> currW.length?prevW:currW)
-    return longestStr
+function longest(strArr) {
+  let longestStr = strArr.reduce((prevW, currW) =>
+    prevW.length > currW.length ? prevW : currW
+  );
+  return longestStr;
 }
-console.log(longest(["Kathy","Adam","Mathew","Venezuela"]));
+console.log(longest(["Kathy", "Adam", "Mathew", "Venezuela"]));
 
 /* EXERCISE 19
 Write a function to create a very simple anti spam filter for your mailbox. The function takes a string emailContent, and returns a boolean.
@@ -154,11 +152,11 @@ Check if the email is valid using string methods. The email (in this example) is
 */
 
 /* WRITE YOUR CODE HERE */
-function anitSpam(emailContent){
-    let content = emailContent.toLowerCase().split(' ')
-    let spamFree =  !(content.includes("spam") || content.includes("scam"))
-    
-    return spamFree
+function anitSpam(emailContent) {
+  let content = emailContent.toLowerCase().split(" ");
+  let spamFree = !(content.includes("spam") || content.includes("scam"));
+
+  return spamFree;
 }
 console.log(anitSpam(" what is my second name"));
 console.log(anitSpam(" Scam is my second name"));
@@ -188,12 +186,12 @@ Ex.: X = 3, Y = 2
 */
 
 /* WRITE YOUR CODE HERE */
-// function matrixGenerator(x,y){
-
-//  for(let i = 0;i<x;i++){
-//      for(let b = 0;b<y;b++){
-//     console.log(i.toString() + b.toString()); 
-//      }
-//     }   
-// }
-// matrixGenerator(3,2)
+function matrixGenerator(x, y) {
+  for (let i = 0; i < x + 1; i++) {
+    console.log(i.toString());
+    for (let b = 0; b < y + 1; b++) {
+      console.log(b.toString());
+    }
+  }
+}
+matrixGenerator(3, 2);
