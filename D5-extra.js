@@ -187,11 +187,12 @@ Ex.: X = 3, Y = 2
 
 /* WRITE YOUR CODE HERE */
 function matrixGenerator(x, y) {
-  for (let i = 0; i < x + 1; i++) {
-    console.log(i.toString());
-    for (let b = 0; b < y + 1; b++) {
-      console.log(b.toString());
+  let myMatrix = [];
+  for (let i = 0; i < y; i++) {
+    for (let b = 0; b < x; b++) {
+      myMatrix[i][b] = i + b;
     }
   }
+  console.log(myMatrix);
 }
 matrixGenerator(3, 2);
