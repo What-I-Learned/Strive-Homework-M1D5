@@ -188,9 +188,11 @@ Ex.: X = 3, Y = 2
 /* WRITE YOUR CODE HERE */
 function matrixGenerator(x, y) {
   let myMatrix = [];
-  for (let i = 0; i < y; i++) {
-    for (let b = 0; b < x; b++) {
-      myMatrix[i][b] = i + b;
+  for (let row = 0; row < y; row++) {
+    for (let col = 0; col < x; col++) {
+      myMatrix.push(row.toString() + col.toString());
+      // myMatrix.push(row);
+      // myMatrix.push(col);
     }
   }
   console.log(myMatrix);
